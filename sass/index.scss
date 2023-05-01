@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+//Responsiveness
+@mixin tablet {
+  @media (max-width: 900px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: 600px) {
+    @content;
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-image: linear-gradient(to left top, #031a9a, #8b53ff);
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 0 35px;
+}
+
+.wrapper {
+  max-width: 1100px;
+  width: 100%;
+  position: relative;
+
+  //SVG arrow icons
+  .icon {
+    height: 50px;
+    width: 50px;
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 0.8rem;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
+    position: absolute;
+    cursor: pointer;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .icon-left {
+    left: -22px;
+  }
+
+  .icon-right {
+    right: -22px;
+  }
+}
+
+.carousel {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% / 3) - 12px);
+  gap: 16px;
+  // overflow: hidden;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  //Add transition to carousel
+  scroll-behavior: smooth;
+  // scrollbar-width: none;
+  scrollbar-width: 0;
+
+  @include tablet {
+    grid-auto-columns: calc((100% / 2) - 9px);
+  }
+
+  @include mobile {
+    grid-auto-columns: 100%;
+  }
+
+  //To center align the border properly
+  :where(.card, .img) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  //To remove scrollbar
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  //To remove the smooth scroll when dragging
+  &.dragging {
+    scroll-behavior: auto;
+    scroll-snap-type: none;
+  }
+
+  //Class added thru JS
+  &.dragging .card {
+    user-select: none;
+    cursor: grab;
+  }
+
+  //To remove the smooth transition of infinite loop
+  &.no-transition {
+    scroll-behavior: auto;
+  }
+}
+
+.card {
+  scroll-snap-align: start;
+  background-color: #fff;
+  border-radius: 8px;
+  height: 342px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 15px;
+  cursor: pointer;
+
+  .img {
+    background-color: #8b53ff;
+    height: 148px;
+    width: 148px;
+    border-radius: 50%;
+
+    img {
+      height: 140px;
+      width: 140px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #fff;
+    }
+  }
+
+  h2 {
+    font-weight: 700;
+    font-size: 1.56rem;
+    margin: 30px 0 5px;
+  }
+
+  span {
+    color: #6a6d78;
+    font-size: 1.31rem;
+  }
+}

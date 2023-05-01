@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Draggable Card Slider JS</title>
+    <link rel="shortcut icon" href="#" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <script src="./js/main.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <!-- Left Arrow Icon -->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="32"
+          height="32"
+          fill="#000000"
+          viewBox="0 0 256 256"
+          class="icon icon-left"
+          id="left"
+        >
+          <path
+            d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"
+          ></path>
+        </svg>
+        <ul class="carousel">
+          <!-- Card -->
+          <li class="card">
+            <div class="img">
+              <!-- Add draggable to false so it wont include when dragging -->
+              <img
+                src="./img/AI.jpg"
+                alt="AI image profile"
+                draggable="false"
+              />
+            </div>
+            <h2>John Doe 1</h2>
+            <span>Web Developer</span>
+          </li>
+          <!-- Card -->
+          <li class="card">
+            <div class="img">
+              <img
+                src="./img/AI.jpg"
+                alt="AI image profile"
+                draggable="false"
+              />
+            </div>
+            <h2>John Doe 2</h2>
+            <span>Web Developer</span>
+          </li>
+          <!-- Card -->
+          <li class="card">
+            <div class="img">
+              <img
+                src="./img/AI.jpg"
+                alt="AI image profile"
+                draggable="false"
+              />
+            </div>
+            <h2>John Doe 3</h2>
+            <span>Web Developer</span>
+          </li>
+          <!-- Card -->
+          <li class="card">
+            <div class="img">
+              <img
+                src="./img/AI.jpg"
+                alt="AI image profile"
+                draggable="false"
+              />
+            </div>
+            <h2>John Doe 4</h2>
+            <span>Web Developer</span>
+          </li>
+          <!-- Card -->
+          <li class="card">
+            <div class="img">
+              <img
+                src="./img/AI.jpg"
+                alt="AI image profile"
+                draggable="false"
+              />
+            </div>
+            <h2>John Doe 5</h2>
+            <span>Web Developer</span>
+          </li>
+          <!-- Card -->
+          <li class="card">
+            <div class="img">
+              <img
+                src="./img/AI.jpg"
+                alt="AI image profile"
+                draggable="false"
+              />
+            </div>
+            <h2>John Doe 6</h2>
+            <span>Web Developer</span>
+          </li>
+        </ul>
+        <!-- Right Arrow Icon -->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="32"
+          height="32"
+          fill="#000000"
+          viewBox="0 0 256 256"
+          class="icon icon-right"
+          id="right"
+        >
+          <path
+            d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"
+          ></path>
+        </svg>
+      </div>
+    </div>
+  </body>
+</html>
